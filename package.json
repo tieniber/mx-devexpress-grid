@@ -1,0 +1,36 @@
+{
+  "name": "react-grid",
+  "widgetName": "ReactGrid",
+  "version": "1.0.0",
+  "description": "My widget description",
+  "copyright": "Mendix 2019",
+  "author": "Eric Tieniber",
+  "config": {
+    "widgetPath": "./dist/MxTestProject/widgets",
+    "projectPath": "./dist/MxTestProject/",
+    "mendixHost": "http://localhost:8080",
+    "developmentPort": "3000"
+  },
+  "packagePath": "mendix",
+  "scripts": {
+    "start": "concurrently \"pluggable-widgets-tools start:server --open\" \"npm:dev\"",
+    "dev": "pluggable-widgets-tools start:js",
+    "build": "pluggable-widgets-tools build:js",
+    "lint": "pluggable-widgets-tools lint",
+    "lint:fix": "pluggable-widgets-tools lint:fix",
+    "prerelease": "npm run lint",
+    "release": "pluggable-widgets-tools release:js"
+  },
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "@mendix/pluggable-widgets-tools": "^8.0.0"
+  },
+  "dependencies": {
+    "@devexpress/dx-react-core": "^2.6.2",
+    "@devexpress/dx-react-grid": "^2.6.2",
+    "@devexpress/dx-react-grid-bootstrap3": "^2.6.2",
+    "big.js": "^5.2.2",
+    "classnames": "^2.2.6",
+    "react-bootstrap": "^0.33.1"
+  }
+}

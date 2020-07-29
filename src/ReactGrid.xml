@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<widget id="mendix.reactgrid.ReactGrid" pluginWidget="true" needsEntityContext="true" offlineCapable="true"
+        supportedPlatform="Web"
+        xmlns="http://www.mendix.com/widget/1.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.mendix.com/widget/1.0/ ../node_modules/mendix/custom_widget.xsd">
+    <name>React Grid</name>
+    <description>My widget description</description>
+    <icon/>
+    <properties>
+        <propertyGroup caption="General">
+            <propertyGroup caption="Datasource">
+                <property key="data" type="datasource" isList="true" required="false">
+                    <caption>Data source</caption>
+                    <description />
+                </property>
+            </propertyGroup>
+            <propertyGroup caption="Columns">
+                <property key="columns" type="object" isList="true">
+                    <caption>Columns</caption>
+                    <description />
+                    <properties>
+                        <propertyGroup caption="General">                    
+                            <property key="columnType" type="enumeration" defaultValue="text">
+                                <caption>Column Type</caption>
+                                <description></description>
+                                <enumerationValues>
+                                    <enumerationValue key="text">Text</enumerationValue>
+                                    <enumerationValue key="expression">Expression</enumerationValue>
+                                    <enumerationValue key="container">Container</enumerationValue>
+                                </enumerationValues>                    
+                            </property> 
+                            <property key="label" type="string" required="true">
+                                <caption>Label</caption>
+                                <description></description>
+                            </property>                     
+                            <property key="attribute" type="attribute" dataSource="../data" required="false">
+                                <caption>Value</caption>
+                                <description></description>
+                                <attributeTypes>
+                                    <attributeType name="String"/>
+                                    <attributeType name="DateTime"/>
+                                </attributeTypes>
+                            </property>
+                            <property key="dateFormat" type="string" required="false">
+                                <caption>Date Format</caption>
+                                <description>(optional) If this attribute is a date, optionally provide a date format like yyyy-MM-dd hh:MM:ss. If not format is provided, it will be formatted as a date for your user's locale.</description>
+                            </property>  
+                           <property key="content" type="widgets" required="false" dataSource="../data">
+                                <caption>Content</caption>
+                                <description>Widgets using data source</description>
+                            </property>                                                
+                        </propertyGroup>
+                        <propertyGroup caption="Formatting">                    
+                            <property key="filterable" type="boolean" defaultValue="false">
+                                <caption>Filterable</caption>
+                                <description>Enables filtering on the column</description>                   
+                            </property>
+                            <property key="resizable" type="boolean" defaultValue="false">
+                                <caption>Resizable</caption>
+                                <description>Enables resizing of the column</description>                   
+                            </property>
+                            <property key="sortable" type="boolean" defaultValue="false">
+                                <caption>Sortable</caption>
+                                <description>Enables sorting on the column</description>                   
+                            </property>
+                            <property key="dragable" type="boolean" defaultValue="false">
+                                <caption>Draggable</caption>
+                                <description>Enables dragging on the column</description>                   
+                            </property>
+                            <property key="frozen" type="boolean" defaultValue="false">
+                                <caption>Frozen</caption>
+                                <description>Determines whether the column is frozen or not.</description>                   
+                            </property>                                                                                  
+                        </propertyGroup>   
+                    </properties>      
+                </property>    
+            </propertyGroup>
+        </propertyGroup>  
+        <propertyGroup caption="Formatting">
+            <property key="rowHeight" type="integer" defaultValue="35">
+                <caption>Row Height</caption>
+                <description>Height of each row.</description>
+                </property> 
+        </propertyGroup>
+    </properties>
+</widget>
